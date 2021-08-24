@@ -24,6 +24,7 @@ intent('Give me the news from $(source* (.*))', (p) => {
         
         p.play({ command: 'newHeadlines', articles });
         p.play(`Here are the (latest|recent) ${p.source.value}.`);
-  
+ 
+        
     });
 })
