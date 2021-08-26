@@ -7,6 +7,7 @@ intent(
 const API_KEY = "a085a9957ef1464694a33ae75ea90212";
 let savedArticles = [];
 
+// News by Source
 intent("Give me the news from $(source* (.*))", (p) => {
   let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}`;
 
@@ -29,5 +30,28 @@ intent("Give me the news from $(source* (.*))", (p) => {
 
     p.play({ command: "newHeadlines", articles });
     p.play(`Here are the (latest|recent) ${p.source.value}.`);
+  });
+});
+
+//News by Term
+intent("what 's up with $(term* (.*))", (p) => {
+  let NEWS_API_URL = `https://newsapi.org/v2/everything?apiKey=${API_KEY}`;
+
+  if (p.term.value) {
+    NEWS_API_URL = `${NEWS_API_URL}&q=${p.term.value}`;
+  }
+
+  api.request(NEWS_API_URL, (error, response, body) => {
+    const { articles } = JSON.parse(body);
+
+    if (!articles.length) {
+      p.play("Sorry, please try searching for something else.");
+      return;
+    }
+
+    savedArticles = articles;
+
+    p.play({ command: "newHeadlines", articles });
+    p.play(`Here are the (latest|recent) articles on ${p.term.value}.`);
   });
 });
