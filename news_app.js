@@ -1,9 +1,3 @@
-intent(
-  "What does this app do?",
-  "What can I do here?",
-  reply("This is a news project.")
-);
-
 const API_KEY = "a085a9957ef1464694a33ae75ea90212";
 let savedArticles = [];
 
@@ -137,3 +131,14 @@ intent("(go|) back", (p) => {
   p.play("Sure, going back");
   p.play({ command: "newHeadlines", articles: [] });
 });
+
+intent(
+  "What does this app do?",
+  "What can I do here?",
+  reply("This is a news project.")
+);
+intent("Who is your boss. ?", reply("I work for master Raj."));
+intent(
+  "Who created this masterpiece. ?",
+  reply("Master Raj build and work on this app.")
+);
