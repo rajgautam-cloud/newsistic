@@ -5,7 +5,7 @@ import HomePage from "./pages/homepage/homepage.component";
 
 const Bookmarks = () => (
   <div>
-    <h1>Bookmarks </h1>
+    <h1>Work for this page is in process</h1>
   </div>
 );
 
