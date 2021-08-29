@@ -5,7 +5,7 @@ import wordsToNumbers from "words-to-numbers";
 
 import NewsCards from "../NewsCards/NewsCards.component";
 import useStyles from "./Directory.styles";
-//import AlanLogo from "./AlanLogo.png";
+import AlanLogo from "./AlanLogo.png";
 
 const alanKey =
   "6cf38ce81e77c99e2a979fc63459bfa32e956eca572e1d8b807a3e2338fdd0dc/stage";
@@ -44,9 +44,9 @@ const Directory = () => {
   }, []);
   return (
     <div>
-      {/* <div className={classes.logoContainer}>
+      <div className={classes.logoContainer}>
         <img src={AlanLogo} className={classes.alanLogo} alt="Alan Logo" />
-      </div> */}
+      </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>
   );
