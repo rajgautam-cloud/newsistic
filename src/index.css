@@ -6,7 +6,7 @@ body {
 
 body {
   margin: 10px;
-  background-color: lightblue;
+  background-color: rgb(212, 248, 246);
 }
 
 * {
@@ -15,4 +15,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
