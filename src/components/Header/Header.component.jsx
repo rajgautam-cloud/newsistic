@@ -12,10 +12,13 @@ const Header = () => (
     </Link>
     <div className="options">
       <Link className="option" to="/bookmarks">
-        <h3>Bookmarks</h3>
+        Bookmarks
       </Link>{" "}
+      <Link className="option" to="/contact">
+        Contact
+      </Link>
       <Link className="option" to="/signin">
-        <h3>Sign In</h3>
+        Sign In
       </Link>
     </div>
   </div>
