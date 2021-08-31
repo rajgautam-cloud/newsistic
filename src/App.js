@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./pages/homepage/homepage.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 const Bookmarks = () => (
   <div>
@@ -24,10 +24,10 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const useRef = await createUserProfileDocument(userAuth);
+      }
     });
   }
 

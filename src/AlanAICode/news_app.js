@@ -1,4 +1,4 @@
-const API_KEY = "a085a9957ef1464694a33ae75ea90212";
+const API_KEY = "";
 let savedArticles = [];
 
 // News by Sources
