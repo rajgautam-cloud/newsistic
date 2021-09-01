@@ -16,9 +16,6 @@ const Header = ({ currentUser }) => (
       <Link className="option" to="/bookmarks">
         BOOKMARKS
       </Link>{" "}
-      <Link className="option" to="/contact">
-        CONTACT
-      </Link>
       {currentUser ? (
         <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
