@@ -9,10 +9,11 @@ import BookmarkIcon from "@material-ui/icons/Bookmark";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase/firebase.utils";
 
 import useStyles from "./Header.styles.js";
 
-export default function SearchAppBar() {
+export default function SearchAppBar({ currentUser }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -59,14 +60,25 @@ export default function SearchAppBar() {
             Bookmark
             <BookmarkIcon />
           </Button>
-          <Button
-            component={Link}
-            to="/signin"
-            className={classes.signin}
-            color="inherit"
-          >
-            Sign In
-          </Button>
+          {currentUser ? (
+            <Button
+              className={classes.signin}
+              color="inherit"
+              className="option"
+              onClick={() => auth.signOut()}
+            >
+              SIGN OUT
+            </Button>
+          ) : (
+            <Button
+              component={Link}
+              to="/signin"
+              className={classes.signin}
+              color="inherit"
+            >
+              Sign In
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </div>
