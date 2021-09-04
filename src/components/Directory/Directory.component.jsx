@@ -4,15 +4,12 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 import wordsToNumbers from "words-to-numbers";
 
 import NewsCards from "../NewsCards/NewsCards.component";
-import useStyles from "./Directory.styles";
-
 const alanKey =
   "6cf38ce81e77c99e2a979fc63459bfa32e956eca572e1d8b807a3e2338fdd0dc/stage";
 
 const Directory = () => {
   const [newsArticles, setNewsArticles] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
-  const classes = useStyles();
   const alanBtnInstance = useRef(null);
 
   useEffect(() => {

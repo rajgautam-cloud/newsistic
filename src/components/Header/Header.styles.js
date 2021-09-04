@@ -20,9 +20,9 @@ export default makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+  // menuButton: {
+  //   marginRight: theme.spacing(2),
+  // },
   hide: {
     display: "none",
   },
@@ -47,7 +47,9 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    display: "none",
+    display: "none", // menuButton: {
+    //   marginRight: theme.spacing(2),
+    // },
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -84,6 +86,7 @@ export default makeStyles((theme) => ({
   },
   search: {
     position: "relative",
+
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.35),
     "&:hover": {

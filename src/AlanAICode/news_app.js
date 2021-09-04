@@ -11,7 +11,6 @@ intent("Give me the news from $(source* (.*))", (p) => {
       .split(" ")
       .join("-")}`;
   }
-
   api.request(NEWS_API_URL, (error, response, body) => {
     const { articles } = JSON.parse(body);
 

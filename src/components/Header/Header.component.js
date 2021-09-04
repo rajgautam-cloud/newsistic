@@ -72,7 +72,7 @@ export default function SearchAppBar({ currentUser }) {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -131,13 +131,11 @@ export default function SearchAppBar({ currentUser }) {
         </div>
         <Divider />
         <List>
-          {["TECHNOLOGY", "HEALTH", "SPORTS", "SCIENCE  "].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+          {["Technology", "Health", "Sports", "Science  "].map((text) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
         </List>
       </Drawer>
     </div>
