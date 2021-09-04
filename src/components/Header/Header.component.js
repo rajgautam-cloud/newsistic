@@ -8,22 +8,52 @@ import MenuIcon from "@material-ui/icons/Menu";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button } from "@material-ui/core";
+import { useTheme } from "@material-ui/core";
+
+import clsx from "clsx";
+import Drawer from "@material-ui/core/Drawer";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
-
 import useStyles from "./Header.styles.js";
 
 export default function SearchAppBar({ currentUser }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#97CAEF" }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+        style={{ background: "#97CAEF" }}
+      >
         <Toolbar>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
           >
             <MenuIcon />
           </IconButton>
@@ -57,7 +87,7 @@ export default function SearchAppBar({ currentUser }) {
             className={classes.bookmark}
             color="inherit"
           >
-            Bookmark
+            Bookmarks
             <BookmarkIcon />
           </Button>
           {currentUser ? (
@@ -81,6 +111,35 @@ export default function SearchAppBar({ currentUser }) {
           )}
         </Toolbar>
       </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {["TECHNOLOGY", "HEALTH", "SPORTS", "SCIENCE  "].map(
+            (text, index) => (
+              <ListItem button key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            )
+          )}
+        </List>
+      </Drawer>
     </div>
   );
 }
