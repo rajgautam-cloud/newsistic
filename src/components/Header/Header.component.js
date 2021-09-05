@@ -131,7 +131,14 @@ export default function SearchAppBar({ currentUser }) {
         </div>
         <Divider />
         <List>
-          {["Technology", "Health", "Sports", "Science  "].map((text) => (
+          {[
+            "Technology",
+            "Health",
+            "Sports",
+            "Science ",
+            "Buisness",
+            "Entertainment",
+          ].map((text) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
