@@ -44,9 +44,6 @@ const Directory = () => {
   }, []);
   return (
     <div>
-      {/* <div className={classes.logoContainer}>
-        <img src={AlanLogo} className={classes.alanLogo} alt="Alan Logo" />
-      </div> */}
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>
   );

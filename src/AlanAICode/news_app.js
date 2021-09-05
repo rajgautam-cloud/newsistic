@@ -114,6 +114,7 @@ const confirmation = context(() => {
   intent("no", (p) => {
     p.play("Sure, sounds good to me.");
   });
+  TypographyTypography;
 });
 
 intent("open (the|) (article|) (number|) $(number* (.*))", (p) => {

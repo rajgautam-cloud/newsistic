@@ -11,6 +11,11 @@ const Bookmarks = () => (
     <h1>Work for this page is in process</h1>
   </div>
 );
+const NewsPage = () => (
+  <div>
+    <h1>" "</h1>
+  </div>
+);
 
 class App extends React.Component {
   constructor() {
@@ -53,6 +58,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/bookmarks" component={Bookmarks} />
+          <Route path="/news" component={NewsPage} />
           <Route path="/signin" component={SignInAndSignUpPage} />
         </Switch>
       </div>

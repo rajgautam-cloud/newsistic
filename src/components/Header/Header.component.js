@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -20,15 +20,16 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import useStyles from "./Header.styles.js";
 
-export default function SearchAppBar({ currentUser }) {
+import NewsPage from "../NewsPage/NewsPage.component";
+
+export default function Header({ currentUser }) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -36,7 +37,6 @@ export default function SearchAppBar({ currentUser }) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -139,7 +139,18 @@ export default function SearchAppBar({ currentUser }) {
             "Buisness",
             "Entertainment",
           ].map((text) => (
-            <ListItem button key={text}>
+            <ListItem
+              button
+              key={text}
+              onClick={() => (
+                <Redirect
+                  to={{
+                    pathname: "/NewsPage",
+                    state: { value: text.toLowerCase() },
+                  }}
+                />
+              )}
+            >
               <ListItemText primary={text} />
             </ListItem>
           ))}

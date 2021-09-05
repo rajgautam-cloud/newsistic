@@ -3,7 +3,6 @@ import { Grid, Grow } from "@material-ui/core";
 
 import useStyles from "./NewsCards.styles";
 import NewsCard from "../NewsCard/NewsCard.component";
-
 const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
   const [LatestNews, setLatestNews] = useState([]);
