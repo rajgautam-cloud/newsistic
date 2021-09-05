@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import HomePage from "./pages/homepage/homepage.component";
+import NewsPage from "./components/NewsPage/NewsPage.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
@@ -9,11 +10,6 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 const Bookmarks = () => (
   <div>
     <h1>Work for this page is in process</h1>
-  </div>
-);
-const NewsPage = () => (
-  <div>
-    <h1>" "</h1>
   </div>
 );
 

@@ -20,15 +20,14 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import useStyles from "./Header.styles.js";
-
-import NewsPage from "../NewsPage/NewsPage.component";
 
 export default function Header({ currentUser }) {
   const classes = useStyles();
   const theme = useTheme();
+  const history = useHistory();
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -132,24 +131,22 @@ export default function Header({ currentUser }) {
         <Divider />
         <List>
           {[
-            "Technology",
-            "Health",
-            "Sports",
-            "Science ",
-            "Buisness",
-            "Entertainment",
+            " Technology",
+            " Health",
+            " Sports",
+            " Science ",
+            " Buisness",
+            " Entertainment",
           ].map((text) => (
             <ListItem
               button
               key={text}
-              onClick={() => (
-                <Redirect
-                  to={{
-                    pathname: "/NewsPage",
-                    state: { value: text.toLowerCase() },
-                  }}
-                />
-              )}
+              onClick={() => {
+                history.push({
+                  pathname: "/news",
+                  state: { value: text.toLowerCase() },
+                });
+              }}
             >
               <ListItemText primary={text} />
             </ListItem>
