@@ -8,15 +8,17 @@ const NewsPage = ({ location }) => {
   const [SideBarNews, setSideBarNews] = useState([]);
   const classes = useStyles();
   useEffect(() => {
-    const news_api = `https://newsapi.org/v2/top-headlines?apiKey=a085a9957ef1464694a33ae75ea90212&country=us&category=${location.state.value}`;
-    async function fetchData() {
-      const response = await fetch(news_api);
-      const data = await response.json();
-      const item = data.articles;
-      setSideBarNews(item);
+    const news_api = `https://newsapi.org/v2/top-headlines?apiKey=c86724666f354eb799bc6b25baa83326&country=us&category=${location.state.value}`;
+    function fetchData() {
+      fetch(news_api)
+        .then((data) => data.json())
+        .then((res) => {
+          const item = res.articles;
+          setSideBarNews(item);
+        })
+        .catch((err) => console.log(err));
     }
     fetchData();
-    console.log(SideBarNews);
   }, [location]);
 
   return (

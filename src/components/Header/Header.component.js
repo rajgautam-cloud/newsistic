@@ -131,12 +131,12 @@ export default function Header({ currentUser }) {
         <Divider />
         <List>
           {[
-            " Technology",
-            " Health",
-            " Sports",
-            " Science ",
-            " Buisness",
-            " Entertainment",
+            "Technology",
+            "Health",
+            "Sports",
+            "Science",
+            "Buisness",
+            "Entertainment",
           ].map((text) => (
             <ListItem
               button

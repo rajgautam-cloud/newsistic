@@ -9,7 +9,7 @@ const NewsCards = ({ articles, activeArticle }) => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=a085a9957ef1464694a33ae75ea90212"
+        "https://newsapi.org/v2/top-headlines?country=in&apiKey=c86724666f354eb799bc6b25baa83326"
       );
       const data = await response.json();
       const item = data.articles;
