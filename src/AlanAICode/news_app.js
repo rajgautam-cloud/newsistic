@@ -11,7 +11,6 @@ intent("Give me the news from $(source* (.*))", (p) => {
       .split(" ")
       .join("-")}`;
   }
-
   api.request(NEWS_API_URL, (error, response, body) => {
     const { articles } = JSON.parse(body);
 
@@ -115,6 +114,7 @@ const confirmation = context(() => {
   intent("no", (p) => {
     p.play("Sure, sounds good to me.");
   });
+  TypographyTypography;
 });
 
 intent("open (the|) (article|) (number|) $(number* (.*))", (p) => {

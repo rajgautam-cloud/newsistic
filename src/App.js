@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import HomePage from "./pages/homepage/homepage.component";
+import NewsPage from "./components/NewsPage/NewsPage.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
@@ -53,6 +54,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/bookmarks" component={Bookmarks} />
+          <Route path="/news" component={NewsPage} />
           <Route path="/signin" component={SignInAndSignUpPage} />
         </Switch>
       </div>
