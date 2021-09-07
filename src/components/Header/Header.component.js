@@ -20,7 +20,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import useStyles from "./Header.styles.js";
 
@@ -135,7 +135,7 @@ export default function Header({ currentUser }) {
             "Health",
             "Sports",
             "Science",
-            "Buisness",
+            "Business",
             "Entertainment",
           ].map((text) => (
             <ListItem
