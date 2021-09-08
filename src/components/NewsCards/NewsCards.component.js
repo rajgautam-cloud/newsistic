@@ -4,10 +4,9 @@ import { Grid, Grow } from "@material-ui/core";
 import useStyles from "./NewsCards.styles";
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsCards = ({ articles, activeArticle, currentUser }) => {
-  console.log(currentUser);
-  console.log("currentUser");
   const classes = useStyles();
   const [LatestNews, setLatestNews] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(

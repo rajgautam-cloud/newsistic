@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
+import firebase from "../../firebase/firebase.utils";
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
 
@@ -31,7 +32,8 @@ const NewsCard = ({
         .map((_, j) => refs[j] || createRef())
     );
   }, []);
-
+  // const uid = firebase.auth().currentUser.uid;
+  // console.log(uid);
   useEffect(() => {
     if (i === activeArticle && elRefs[activeArticle]) {
       scrollToRef(elRefs[activeArticle]);
