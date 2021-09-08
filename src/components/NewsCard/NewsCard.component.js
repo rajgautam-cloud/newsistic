@@ -8,6 +8,9 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
@@ -16,11 +19,11 @@ const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
   i,
   activeArticle,
+  currentUser,
 }) => {
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
-
   useEffect(() => {
     setElRefs((refs) =>
       Array(20)
@@ -51,6 +54,7 @@ const NewsCard = ({
             "https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png"
           }
         />
+
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
             {new Date(publishedAt).toDateString()}
@@ -69,9 +73,18 @@ const NewsCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" href={url} target="_blank">
+        <IconButton
+          aria-label="add to favorites"
+          onClick={() => {
+            console.log("clicked");
+          }}
+        >
+          <FavoriteIcon />
+        </IconButton>
+        {/* <Button size="small" color="primary" href={url} target="_blank">
           Learn More
-        </Button>
+        </Button> */}
+
         <Typography variant="h5" color="textSecondary">
           {i + 1}
         </Typography>

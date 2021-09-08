@@ -29,6 +29,7 @@ export default function Header({ currentUser }) {
   const theme = useTheme();
   const history = useHistory();
   const [open, setOpen] = useState(false);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
