@@ -5,7 +5,6 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Button,
   Typography,
 } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
@@ -21,7 +20,7 @@ const NewsCard = ({
   activeArticle,
   currentUser,
 }) => {
-  const [uid, setUid] = useState([]);
+  const [uid, setUid] = useState(null);
   useEffect(() => {
     if (currentUser) {
       setUid(currentUser.id);
