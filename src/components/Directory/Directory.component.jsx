@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const alanKey =
   "6cf38ce81e77c99e2a979fc63459bfa32e956eca572e1d8b807a3e2338fdd0dc/stage";
 
-const Directory = () => {
+const Directory = ({ currentUser }) => {
   const [newsArticles, setNewsArticles] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
   const alanBtnInstance = useRef(null);
@@ -51,7 +51,11 @@ const Directory = () => {
   }, []);
   return (
     <div>
-      <NewsCards articles={newsArticles} activeArticle={activeArticle} />
+      <NewsCards
+        articles={newsArticles}
+        activeArticle={activeArticle}
+        currentUser={currentUser}
+      />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import { useTheme } from "@material-ui/core";
 
 import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
@@ -29,6 +30,7 @@ export default function Header({ currentUser }) {
   const theme = useTheme();
   const history = useHistory();
   const [open, setOpen] = useState(false);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -44,7 +46,7 @@ export default function Header({ currentUser }) {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        style={{ background: "#97CAEF" }}
+        style={{ background: "#527BAD" }}
       >
         <Toolbar>
           <IconButton

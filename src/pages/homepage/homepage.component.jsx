@@ -4,9 +4,9 @@ import Directory from "../../components/Directory/Directory.component";
 
 import "./homepage.styles.scss";
 
-const HomePage = () => (
+const HomePage = ({ currentUser }) => (
   <div className="homepage">
-    <Directory />
+    <Directory currentUser={currentUser} />
   </div>
 );
 

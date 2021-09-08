@@ -6,7 +6,6 @@ import NewsPage from "./components/NewsPage/NewsPage.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-
 const Bookmarks = () => (
   <div>
     <h1>Work for this page is in process</h1>
@@ -26,7 +25,6 @@ const App = () => {
       }
       setCurrentUser(userAuth);
     });
-
     return () => {
       unsubscribeFromAuth();
     };
@@ -36,7 +34,11 @@ const App = () => {
     <div>
       <Header currentUser={currentUser} />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route
+          exact
+          path="/"
+          render={(props) => <HomePage {...props} currentUser={currentUser} />}
+        />
         <Route path="/bookmarks" component={Bookmarks} />
         <Route path="/news" component={NewsPage} />
         <Route path="/signin" component={SignInAndSignUpPage} />
