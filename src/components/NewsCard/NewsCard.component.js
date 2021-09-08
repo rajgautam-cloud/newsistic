@@ -11,8 +11,7 @@ import {
 import IconButton from "@material-ui/core/IconButton";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
-
-import firebase from "../../firebase/firebase.utils";
+import handleAddToBookmark from "../../firestore/addToBookmark";
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
 
@@ -22,6 +21,13 @@ const NewsCard = ({
   activeArticle,
   currentUser,
 }) => {
+  const [uid, setUid] = useState([]);
+  useEffect(() => {
+    if (currentUser) {
+      setUid(currentUser.id);
+    }
+  }, []);
+
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
@@ -32,8 +38,6 @@ const NewsCard = ({
         .map((_, j) => refs[j] || createRef())
     );
   }, []);
-  // const uid = firebase.auth().currentUser.uid;
-  // console.log(uid);
   useEffect(() => {
     if (i === activeArticle && elRefs[activeArticle]) {
       scrollToRef(elRefs[activeArticle]);
@@ -78,7 +82,15 @@ const NewsCard = ({
         <IconButton
           aria-label="add to favorites"
           onClick={() => {
-            console.log("clicked");
+            handleAddToBookmark(
+              description,
+              publishedAt,
+              source,
+              title,
+              url,
+              urlToImage,
+              uid
+            );
           }}
         >
           <FavoriteIcon />

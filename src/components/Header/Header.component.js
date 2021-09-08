@@ -46,7 +46,7 @@ export default function Header({ currentUser }) {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        style={{ background: "#527BAD" }}
+        style={{ background: "#1DABFF" }}
       >
         <Toolbar>
           <IconButton
