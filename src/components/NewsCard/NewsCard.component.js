@@ -5,13 +5,13 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Button,
   Typography,
 } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-
+import firebase from "../../firebase/firebase.utils";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import handleAddToBookmark from "../../firestore/addToBookmark";
+import handleDeleteBookmark from "../../firestore/deleteBookmark";
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
 
@@ -19,15 +19,15 @@ const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
   i,
   activeArticle,
-  currentUser,
 }) => {
-  const [uid, setUid] = useState([]);
-  useEffect(() => {
-    if (currentUser) {
-      setUid(currentUser.id);
-    }
-  }, []);
-
+  const auth = firebase.auth().currentUser;
+  let uid = null;
+  if (auth) {
+    uid = auth.uid;
+    console.log(uid);
+  }
+  console.log("newscarduid");
+  console.log(uid);
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
@@ -38,6 +38,7 @@ const NewsCard = ({
         .map((_, j) => refs[j] || createRef())
     );
   }, []);
+
   useEffect(() => {
     if (i === activeArticle && elRefs[activeArticle]) {
       scrollToRef(elRefs[activeArticle]);
@@ -82,15 +83,27 @@ const NewsCard = ({
         <IconButton
           aria-label="add to favorites"
           onClick={() => {
-            handleAddToBookmark(
-              description,
-              publishedAt,
-              source,
-              title,
-              url,
-              urlToImage,
-              uid
-            );
+            if (window.location === "/") {
+              handleAddToBookmark(
+                description,
+                publishedAt,
+                source,
+                title,
+                url,
+                urlToImage,
+                uid
+              );
+            } else {
+              handleDeleteBookmark(
+                description,
+                publishedAt,
+                source,
+                title,
+                url,
+                urlToImage,
+                uid
+              );
+            }
           }}
         >
           <FavoriteIcon />
