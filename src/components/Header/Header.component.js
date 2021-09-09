@@ -15,11 +15,20 @@ import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
+import MemoryIcon from "@material-ui/icons/Memory";
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
+
+import SportsHandballIcon from "@material-ui/icons/SportsHandball";
+import BusinessIcon from "@material-ui/icons/Business";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-
+import { ListItemIcon } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import useStyles from "./Header.styles.js";
@@ -81,24 +90,26 @@ export default function Header({ currentUser }) {
             />
           </div>
 
-          <Button
-            component={Link}
-            to="/bookmarks"
-            className={classes.bookmark}
-            color="inherit"
-          >
-            Bookmarks
-            <BookmarkIcon />
-          </Button>
           {currentUser ? (
-            <Button
-              className={classes.signin}
-              color="inherit"
-              className="option"
-              onClick={() => auth.signOut()}
-            >
-              SIGN OUT
-            </Button>
+            <>
+              <Button
+                component={Link}
+                to="/bookmarks"
+                className={classes.bookmark}
+                color="inherit"
+              >
+                Bookmarks
+                <BookmarkIcon />
+              </Button>
+              <Button
+                className={classes.signin}
+                color="inherit"
+                className="option"
+                onClick={() => auth.signOut()}
+              >
+                <ExitToAppIcon />
+              </Button>
+            </>
           ) : (
             <Button
               component={Link}
@@ -107,6 +118,7 @@ export default function Header({ currentUser }) {
               color="inherit"
             >
               Sign In
+              <AccountBoxIcon />
             </Button>
           )}
         </Toolbar>
@@ -131,27 +143,90 @@ export default function Header({ currentUser }) {
         </div>
         <Divider />
         <List>
-          {[
-            "Technology",
-            "Health",
-            "Sports",
-            "Science",
-            "Business",
-            "Entertainment",
-          ].map((text) => (
-            <ListItem
-              button
-              key={text}
-              onClick={() => {
-                history.push({
-                  pathname: "/news",
-                  state: { value: text.toLowerCase() },
-                });
-              }}
-            >
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "technology" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <MemoryIcon />
+            </ListItemIcon>
+            <ListItemText primary="Technology" />
+          </ListItem>
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "health" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <LocalHospitalIcon />
+            </ListItemIcon>
+            <ListItemText primary="Health" />
+          </ListItem>{" "}
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "sports" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <SportsHandballIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sports" />
+          </ListItem>{" "}
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "science" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <WbIncandescentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Science" />
+          </ListItem>{" "}
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "business" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <BusinessIcon />
+            </ListItemIcon>
+            <ListItemText primary="Business" />
+          </ListItem>{" "}
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/news",
+                state: { value: "entertainment" },
+              });
+            }}
+          >
+            <ListItemIcon>
+              <WhatshotIcon />
+            </ListItemIcon>
+            <ListItemText primary="Entertainment" />
+          </ListItem>
         </List>
       </Drawer>
     </div>

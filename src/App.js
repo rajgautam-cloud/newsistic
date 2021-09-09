@@ -7,7 +7,6 @@ import BookmarksPage from "./pages/bookmarks-page/bookmarks-page.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { Bookmarks } from "@material-ui/icons";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -23,9 +22,9 @@ const App = () => {
       console.log(userAuth);
       setCurrentUser(userAuth);
     });
-    // return () => {
-    //   unsubscribeFromAuth();
-    // };
+    return () => {
+      unsubscribeFromAuth();
+    };
   }, []);
 
   return (
