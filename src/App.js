@@ -6,6 +6,8 @@ import NewsPage from "./components/NewsPage/NewsPage.component";
 import BookmarksPage from "./pages/bookmarks-page/bookmarks-page.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/Header/Header.component";
+import CommandCards from "./pages/commands-page/commands-page.component";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 const App = () => {
@@ -35,6 +37,7 @@ const App = () => {
         <Route path="/bookmarks" component={BookmarksPage} />
         <Route path="/news" component={NewsPage} />
         <Route path="/signin" component={SignInAndSignUpPage} />
+        <Route path="/commands" component={CommandCards} />
       </Switch>
     </div>
   );

@@ -97,15 +97,7 @@ const NewsCard = ({
                 uid
               );
             } else {
-              handleDeleteBookmark(
-                description,
-                publishedAt,
-                source,
-                title,
-                url,
-                urlToImage,
-                uid
-              );
+              handleDeleteBookmark(description, uid);
             }
           }}
         >

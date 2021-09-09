@@ -1,14 +1,6 @@
 import { firestoreDB } from "../firebase/firebase.utils";
-
-const handleDeleteBookmark = async (
-  description,
-  publishedAt,
-  source,
-  title,
-  url,
-  urlToImage,
-  uid
-) => {
+import { message } from "antd";
+const handleDeleteBookmark = async (description, uid) => {
   const data = await firestoreDB.collection("users").doc(uid).get();
   let bookmarks = await data.data().bookmarks;
   const filteredBookmarks = bookmarks.filter((value) => {

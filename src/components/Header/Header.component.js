@@ -21,8 +21,9 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
 import MemoryIcon from "@material-ui/icons/Memory";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-
+import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 import SportsHandballIcon from "@material-ui/icons/SportsHandball";
+import SettingsVoiceIcon from "@material-ui/icons/SettingsVoice";
 import BusinessIcon from "@material-ui/icons/Business";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -89,7 +90,6 @@ export default function Header({ currentUser }) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-
           {currentUser ? (
             <>
               <Button
@@ -111,15 +111,21 @@ export default function Header({ currentUser }) {
               </Button>
             </>
           ) : (
-            <Button
-              component={Link}
-              to="/signin"
-              className={classes.signin}
-              color="inherit"
-            >
-              Sign In
-              <AccountBoxIcon />
-            </Button>
+            <>
+              <Button component={Link} to="/commands" color="inherit">
+                Alan
+                <KeyboardVoiceIcon />
+              </Button>
+              <Button
+                component={Link}
+                to="/signin"
+                className={classes.signin}
+                color="inherit"
+              >
+                Sign In
+                <AccountBoxIcon />
+              </Button>
+            </>
           )}
         </Toolbar>
       </AppBar>
@@ -226,6 +232,20 @@ export default function Header({ currentUser }) {
               <WhatshotIcon />
             </ListItemIcon>
             <ListItemText primary="Entertainment" />
+          </ListItem>
+          <Divider />
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/commands",
+              });
+            }}
+          >
+            <ListItemIcon>
+              <SettingsVoiceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Alan Commands" />
           </ListItem>
         </List>
       </Drawer>
