@@ -83,7 +83,10 @@ const NewsCard = ({
         <IconButton
           aria-label="add to favorites"
           onClick={() => {
-            if (window.location === "/") {
+            if (
+              window.location.pathname === "/" ||
+              window.location.pathname === "/news"
+            ) {
               handleAddToBookmark(
                 description,
                 publishedAt,

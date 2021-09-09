@@ -1,7 +1,7 @@
 import React from "react";
 
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import { Button } from "@material-ui/core";
 
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
@@ -60,11 +60,29 @@ class SignIn extends React.Component {
             required
           />
           <div className="buttons">
-            <CustomButton type="submit">Sign In</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            <Button
+              style={{
+                backgroundColor: "#080808",
+                color: "#FFF",
+                marginRight: "15px",
+              }}
+              variant="contained"
+              type="submit"
+            >
+              Sign in
+            </Button>
+            <Button
+              style={{
+                backgroundColor: "#4285f4",
+              }}
+              variant="contained"
+              color="primary"
+              onClick={signInWithGoogle}
+              isGoogleSignIn
+            >
               {" "}
               Sign in with Google{" "}
-            </CustomButton>
+            </Button>
           </div>
         </form>
       </div>
