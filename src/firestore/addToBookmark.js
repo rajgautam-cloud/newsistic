@@ -16,25 +16,36 @@ const handleAddToBookmark = async (
   }
   const data = await firestoreDB.collection("users").doc(uid).get();
   if (data) {
-    let bookmarks = await data.data().bookmarks;
-    if (!bookmarks) {
-      bookmarks = [
+    if (data.data()) {
+      let bookmarks = await data.data().bookmarks;
+      let flag = true;
+      bookmarks.map((value) => {
+        if (value.description === description) {
+          flag = false;
+        }
+      });
+      if (flag == true) {
+        bookmarks.push({
+          description,
+          publishedAt,
+          source,
+          title,
+          url,
+          urlToImage,
+        });
+        firestoreDB
+          .collection("users")
+          .doc(uid)
+          .set({ bookmarks }, { merge: true });
+        alert("added to favourites");
+      } else {
+        alert("already in favourites");
+      }
+    } else {
+      let bookmarks = [
         { description, publishedAt, source, title, url, urlToImage },
       ];
       firestoreDB.collection("users").doc(uid).set({ bookmarks });
-    } else {
-      bookmarks.push({
-        description,
-        publishedAt,
-        source,
-        title,
-        url,
-        urlToImage,
-      });
-      firestoreDB
-        .collection("users")
-        .doc(uid)
-        .set({ bookmarks }, { merge: true });
     }
   }
 };

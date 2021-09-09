@@ -20,9 +20,7 @@ export default makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  // menuButton: {
-  //   marginRight: theme.spacing(2),
-  // },
+
   hide: {
     display: "none",
   },
@@ -32,6 +30,7 @@ export default makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    background: "#ADD8E6",
   },
   drawerHeader: {
     display: "flex",
@@ -47,6 +46,8 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    position: "relative",
+
     display: "none", // menuButton: {
     //   marginRight: theme.spacing(2),
     // },
