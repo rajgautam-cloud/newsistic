@@ -20,28 +20,20 @@ const App = () => {
           setCurrentUser({ id: snapShot.id, ...snapShot.data() });
         });
       }
+      console.log(userAuth);
       setCurrentUser(userAuth);
     });
-    return () => {
-      unsubscribeFromAuth();
-    };
+    // return () => {
+    //   unsubscribeFromAuth();
+    // };
   }, []);
 
   return (
     <div>
       <Header currentUser={currentUser} />
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={(props) => <HomePage {...props} currentUser={currentUser} />}
-        />
-        <Route
-          path="/bookmarks"
-          render={(props) => (
-            <BookmarksPage {...props} currentUser={currentUser} />
-          )}
-        />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/bookmarks" component={BookmarksPage} />
         <Route path="/news" component={NewsPage} />
         <Route path="/signin" component={SignInAndSignUpPage} />
       </Switch>

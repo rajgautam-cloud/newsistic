@@ -9,6 +9,7 @@ const handleAddToBookmark = async (
   urlToImage,
   uid
 ) => {
+  // console.log(uid);
   if (!uid) {
     alert("not logged in");
     return;

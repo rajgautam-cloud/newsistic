@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { firestoreDB } from "../../firebase/firebase.utils";
+import firebase, { firestoreDB } from "../../firebase/firebase.utils";
 import useStyles from "./bookmarks-page.styles";
 import NewsCard from "../../components/NewsCard/NewsCard.component";
-import { Grid, Grow } from "@material-ui/core";
+import { Grid, Grow, Typography } from "@material-ui/core";
 
-const BookmarksPage = ({ currentUser }) => {
-  const [uid, setUid] = useState(null);
-  useEffect(() => {
-    if (currentUser) {
-      setUid(currentUser.id);
-    }
-  }, []);
+const BookmarksPage = () => {
+  const auth = firebase.auth().currentUser;
+  let uid = null;
+  if (auth) {
+    uid = auth.uid;
+    console.log(uid);
+  }
+  console.log("bookmarksuid");
   console.log(uid);
   const classes = useStyles();
   const [bookmarks, setBookmarks] = useState([]);
 
-  (async function () {
+  useEffect(() => {
     firestoreDB
       .collection("users")
       .doc(uid)
@@ -25,7 +26,7 @@ const BookmarksPage = ({ currentUser }) => {
           setBookmarks(data.data().bookmarks);
         }
       });
-  })();
+  }, []);
 
   return (
     <Grow in>
