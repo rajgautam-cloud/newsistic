@@ -10,6 +10,6 @@ const handleDeleteBookmark = async (description, uid) => {
     .collection("users")
     .doc(uid)
     .set({ bookmarks: filteredBookmarks });
-  alert("removed successfully ,refresh the page");
+  alert("Removed successfully ,refresh the page");
 };
 export default handleDeleteBookmark;

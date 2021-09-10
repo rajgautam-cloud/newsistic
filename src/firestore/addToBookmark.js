@@ -37,9 +37,9 @@ const handleAddToBookmark = async (
           .collection("users")
           .doc(uid)
           .set({ bookmarks }, { merge: true });
-        alert("added to favourites");
+        alert("Added to Bookmarks");
       } else {
-        alert("already in favourites");
+        alert("Already in Bookmarks");
       }
     } else {
       let bookmarks = [

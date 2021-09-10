@@ -1,21 +1,25 @@
 export const infoCards = [
-  { color: "#41B3A3", title: "Latest News", text: "Give me the latest news" },
   {
-    color: "#C38D9E",
+    color: "#72bcd4",
+    title: "Latest News",
+    text: "Give me the latest news   or  Go back",
+  },
+  {
+    color: "#adbce6",
     title: "News by Categories",
     info: "Business, Health, Science, Business , Sports, Technology",
     text: "Give me the latest Technology news",
   },
   {
-    color: "#C38D9E",
+    color: "#adbce6",
     title: "News by Terms",
-    info: "Bitcoin, PlayStation 5, Smartphones, Donald Trump...",
-    text: "What's up with PlayStation 5",
+    info: "I Phone, Narendra Modi, Corona Virus, Donald Trump...",
+    text: "What's up with Corona Virus",
   },
   {
-    color: "#41B3A3",
+    color: "#72bcd4",
     title: "News by Sources",
-    info: "CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...",
+    info: " Wired, BBC News, Time, IGN, Buzzfeed, ABC News...",
     text: "Give me the news from BBC News",
   },
 ];
