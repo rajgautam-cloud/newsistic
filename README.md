@@ -40,7 +40,7 @@ A interesting way to remain updated with the happenings around the world with yo
 
 ## **Starting the Dev Server**
 
-- Clone the repository to your local system. `https://github.com/rosekamallove/youtemy`
+- Clone the repository to your local system. `https://github.com/rajgautam-cloud/newsistic`
 
 - Firebase API Setup:
 
