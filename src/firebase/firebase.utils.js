@@ -1,9 +1,9 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-
+const API_KEY = process.env.REACT_APP_FIREBASE;
 const config = {
-  apiKey: "AIzaSyCxlGJ-nRRRbh-uofugxqw7cpO0dAA2u8w",
+  apiKey: API_KEY,
   authDomain: "newsapp-bc811.firebaseapp.com",
   projectId: "newsapp-bc811",
   storageBucket: "newsapp-bc811.appspot.com",
