@@ -18,3 +18,22 @@ A interesting way to remain updated with the happenings around the world with yo
 > ### ![AlanCommandsPage](protoypes/AlanCommandsPage.png)
 
 > ### ![HomePage](protoypes/Homepage.png)
+
+## Overview
+
+- ### Pages:
+
+  - **Home Page**
+
+    - It shows lastest news and a header containing various buttons
+    - A sidebar containing different categories.
+
+  - **Commands Page**:
+
+    - Show all the commands needed to Search news.
+
+  - **SignIn Page**
+
+    - Sign in and Sign up options
+    - New user can use Sign up to sign in through Email and Password.
+    - Sign in with Google button.
