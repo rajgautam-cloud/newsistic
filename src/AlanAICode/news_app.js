@@ -1,7 +1,7 @@
 const API_KEY = "";
 let savedArticles = [];
 
-// News by Sources
+// News by Source
 intent("Give me the news from $(source* (.*))", (p) => {
   let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}`;
 
@@ -11,6 +11,7 @@ intent("Give me the news from $(source* (.*))", (p) => {
       .split(" ")
       .join("-")}`;
   }
+
   api.request(NEWS_API_URL, (error, response, body) => {
     const { articles } = JSON.parse(body);
 
@@ -114,7 +115,6 @@ const confirmation = context(() => {
   intent("no", (p) => {
     p.play("Sure, sounds good to me.");
   });
-  TypographyTypography;
 });
 
 intent("open (the|) (article|) (number|) $(number* (.*))", (p) => {
