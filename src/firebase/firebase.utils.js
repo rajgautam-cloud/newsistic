@@ -1,9 +1,9 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-
+const API_KEY = process.env.REACT_APP_FIREBASE;
 const config = {
-  apiKey: "AIzaSyCxlGJ-nRRRbh-uofugxqw7cpO0dAA2u8w",
+  apiKey: API_KEY,
   authDomain: "newsapp-bc811.firebaseapp.com",
   projectId: "newsapp-bc811",
   storageBucket: "newsapp-bc811.appspot.com",
@@ -17,8 +17,7 @@ firebase.initializeApp(config);
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
-
+  const userRef = firestoreDB.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
@@ -40,8 +39,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-
+const firestoreDB = firebase.firestore();
+export { firestoreDB };
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);

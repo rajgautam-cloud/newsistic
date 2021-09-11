@@ -5,10 +5,13 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Button,
   Typography,
 } from "@material-ui/core";
-
+import IconButton from "@material-ui/core/IconButton";
+import firebase from "../../firebase/firebase.utils";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import handleAddToBookmark from "../../firestore/addToBookmark";
+import handleDeleteBookmark from "../../firestore/deleteBookmark";
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
 
@@ -17,10 +20,17 @@ const NewsCard = ({
   i,
   activeArticle,
 }) => {
+  const auth = firebase.auth().currentUser;
+  let uid = null;
+  if (auth) {
+    uid = auth.uid;
+    console.log(uid);
+  }
+  console.log("newscarduid");
+  console.log(uid);
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
-
   useEffect(() => {
     setElRefs((refs) =>
       Array(20)
@@ -51,6 +61,7 @@ const NewsCard = ({
             "https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png"
           }
         />
+
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
             {new Date(publishedAt).toDateString()}
@@ -69,9 +80,33 @@ const NewsCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary">
+        <IconButton
+          aria-label="add to favorites"
+          onClick={() => {
+            if (
+              window.location.pathname === "/" ||
+              window.location.pathname === "/news"
+            ) {
+              handleAddToBookmark(
+                description,
+                publishedAt,
+                source,
+                title,
+                url,
+                urlToImage,
+                uid
+              );
+            } else {
+              handleDeleteBookmark(description, uid);
+            }
+          }}
+        >
+          <FavoriteIcon />
+        </IconButton>
+        {/* <Button size="small" color="primary" href={url} target="_blank">
           Learn More
-        </Button>
+        </Button> */}
+
         <Typography variant="h5" color="textSecondary">
           {i + 1}
         </Typography>

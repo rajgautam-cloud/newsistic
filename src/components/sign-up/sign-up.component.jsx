@@ -1,8 +1,7 @@
 import React from "react";
 
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
-
+import { Button } from "@material-ui/core";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 import "./sign-up.styles.scss";
@@ -89,7 +88,16 @@ class SignUp extends React.Component {
             label="Confirm Password"
             required
           />
-          <CustomButton type="submit">SIGN UP</CustomButton>
+          <Button
+            style={{
+              backgroundColor: "#080808",
+              color: "#FFF",
+            }}
+            variant="contained"
+            type="submit"
+          >
+            SIGN UP
+          </Button>
         </form>
       </div>
     );
