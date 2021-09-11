@@ -47,7 +47,7 @@ export default makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     position: "relative",
-
+    marginLeft: "50px",
     display: "none", // menuButton: {
     //   marginRight: theme.spacing(2),
     // },

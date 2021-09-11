@@ -71,7 +71,7 @@ export default function Header({ currentUser }) {
             component={Link}
             to="/"
             className={classes.title}
-            variant="h6"
+            variant="h5"
             color="inherit"
             noWrap
           >
@@ -232,6 +232,13 @@ export default function Header({ currentUser }) {
               <WhatshotIcon />
             </ListItemIcon>
             <ListItemText primary="Entertainment" />
+          </ListItem>
+          <Divider />
+          <ListItem button>
+            <ListItemIcon>
+              <LocalHospitalIcon />
+            </ListItemIcon>
+            <ListItemText primary="Covid-19" />
           </ListItem>
           <Divider />
           <ListItem

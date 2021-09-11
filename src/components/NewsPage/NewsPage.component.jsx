@@ -6,9 +6,10 @@ import useStyles from "./NewsPage.styles.js";
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsPage = ({ location }) => {
   const [SideBarNews, setSideBarNews] = useState([]);
+  const API_KEY = process.env.REACT_APP_NEWSAPI;
   const classes = useStyles();
   useEffect(() => {
-    const news_api = `https://newsapi.org/v2/top-headlines?apiKey=c86724666f354eb799bc6b25baa83326&country=us&category=${location.state.value}`;
+    const news_api = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=us&category=${location.state.value}`;
     function fetchData() {
       fetch(news_api)
         .then((data) => data.json())

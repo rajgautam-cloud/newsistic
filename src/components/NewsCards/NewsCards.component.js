@@ -5,11 +5,13 @@ import useStyles from "./NewsCards.styles";
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
+  const API_KEY = process.env.REACT_APP_NEWSAPI;
   const [LatestNews, setLatestNews] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=c86724666f354eb799bc6b25baa83326"
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`
       );
       const data = await response.json();
       const item = data.articles;

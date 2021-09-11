@@ -9,10 +9,8 @@ const BookmarksPage = () => {
   let uid = null;
   if (auth) {
     uid = auth.uid;
-    console.log(uid);
   }
-  console.log("bookmarksuid");
-  console.log(uid);
+
   const classes = useStyles();
   const [bookmarks, setBookmarks] = useState([]);
 
@@ -29,20 +27,25 @@ const BookmarksPage = () => {
   }, []);
 
   return (
-    <Grow in>
-      <Grid
-        className={classes.container}
-        container
-        alignItems="stretch"
-        spacing={3}
-      >
-        {bookmarks.map((article, i) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
-            <NewsCard article={article} i={i} />
-          </Grid>
-        ))}
-      </Grid>
-    </Grow>
+    <>
+      <Typography variant="h4" className={classes.text}>
+        This is your Bookmared News...
+      </Typography>
+      <Grow in>
+        <Grid
+          className={classes.container}
+          container
+          alignItems="stretch"
+          spacing={3}
+        >
+          {bookmarks.map((article, i) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
+              <NewsCard article={article} i={i} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grow>
+    </>
   );
 };
 export default BookmarksPage;
