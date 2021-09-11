@@ -6,3 +6,15 @@ A interesting way to remain updated with the happenings around the world with yo
 ### Project Demo with Alan Commands
 
 <https://www.linkedin.com/posts/raj-gautam-024369201_webdeveloper-newsalert-reactdeveloper-activity-6841978327721369600-eLkH/>
+
+> ## Snapshots of the Hosted Projects
+
+> ### ![HomePage](protoypes/HomePageWithSidebar.png)
+
+> ### ![BookmarksPage](protoypes/BookmarksPage.png)
+
+> ### ![SignInPage](protoypes/SignInPage.png)
+
+> ### ![AlanCommandsPage](protoypes/AlanCommandsPage.png)
+
+> ### ![HomePage](protoypes/Homepage.png)
