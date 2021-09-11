@@ -7,7 +7,7 @@ A interesting way to remain updated with the happenings around the world with yo
 
 <https://www.linkedin.com/posts/raj-gautam-024369201_webdeveloper-newsalert-reactdeveloper-activity-6841978327721369600-eLkH/>
 
-> ## Snapshots of the Hosted Projects
+> ## Snapshots of the Hosted Project
 
 > ### ![HomePage](protoypes/HomePageWithSidebar.png)
 
