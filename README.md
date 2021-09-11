@@ -17,8 +17,6 @@ A interesting way to remain updated with the happenings around the world with yo
 
 > ### ![AlanCommandsPage](protoypes/AlanCommandsPage.png)
 
-> ### ![HomePage](protoypes/Homepage.png)
-
 ## Overview
 
 - ### Pages:
