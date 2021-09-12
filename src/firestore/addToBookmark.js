@@ -36,7 +36,7 @@ const handleAddToBookmark = async (
         firestoreDB
           .collection("users")
           .doc(uid)
-          .set({ bookmarks }, { merge: true });
+          favourites  .set({ bookmarks }, { merge: true });
         alert("Added to Bookmarks");
       } else {
         alert("Already in Bookmarks");
