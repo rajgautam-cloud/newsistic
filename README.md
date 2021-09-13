@@ -3,9 +3,11 @@
 A interesting way to remain updated with the happenings around the world with your virtual assistant Alan. You can ask Alan any kind of news you want and also bookmark the news you like or want to read it later.
 <br/>
 
-## [Full Project Demo](https://www.linkedin.com/posts/raj-gautam-024369201_webdeveloper-newsalert-reactdeveloper-activity-6841978327721369600-eLkH/)
+### **Click on link below to view its amazing features .**
 
-**Snapshots of the Hosted Project**
+# [Full Project Demo](https://www.linkedin.com/posts/raj-gautam-024369201_webdeveloper-newsalert-reactdeveloper-activity-6841978327721369600-eLkH/)
+
+## Snapshots of the Hosted Project
 
 > ### ![HomePage](protoypes/HomePageWithSidebar.png)
 
