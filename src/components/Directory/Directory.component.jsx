@@ -5,8 +5,7 @@ import wordsToNumbers from "words-to-numbers";
 
 import NewsCards from "../NewsCards/NewsCards.component";
 import { useHistory } from "react-router-dom";
-const alanKey =
-  "6cf38ce81e77c99e2a979fc63459bfa32e956eca572e1d8b807a3e2338fdd0dc/stage";
+const alanKey = process.env.REACT_APP_ALANKEY;
 
 const Directory = () => {
   const [newsArticles, setNewsArticles] = useState([]);
