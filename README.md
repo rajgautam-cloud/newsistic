@@ -26,10 +26,10 @@ A interesting way to remain updated with the happenings around the world with yo
     - It shows lastest news and a header containing various buttons
     - A sidebar containing different categories.
 
-- **Bookmarks Page**
+  - **Bookmarks Page**
 
-  - It shows news bookmarked by the user.
-  - User can also delete the articles from bookmarked news.
+    - It shows news bookmarked by the user.
+    - User can also delete the articles from bookmarked news.
 
   - **Commands Page**:
 
@@ -49,14 +49,15 @@ A interesting way to remain updated with the happenings around the world with yo
     - New user can read the alan commands from commands page.
     - Makes the app voice controlled and interesting.
 
-    - **Search Bar**
+  - **Search Bar**
+
     - Option to search the news by typing.
     - If user wants news about a particular topic he can use it.
     - It makes the interaction faster.
 
   - **Side Bar**
-  - Option to click the different categories.
-  - User can get the news only by clicking.
+    - Option to click the different categories.
+    - User can get the news only by clicking.
 
 ## **Starting the Dev Server**
 
