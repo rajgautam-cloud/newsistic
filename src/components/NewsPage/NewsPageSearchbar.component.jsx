@@ -7,6 +7,7 @@ import NewsCard from "../NewsCard/NewsCard.component";
 const NewsSearch = ({ location }) => {
   const [searchBarNews, setSearchBarNews] = useState([]);
   const API_KEY = process.env.REACT_APP_NEWSAPI;
+
   const classes = useStyles();
   useEffect(() => {
     const url = `https://newsapi.org/v2/everything?q=${location.state.value}&apiKey=${API_KEY}`;
@@ -20,6 +21,13 @@ const NewsSearch = ({ location }) => {
     fetchData();
   }, [location]);
 
+  if (!searchBarNews.length) {
+    return (
+      <div className={classes.container}>
+        <h1>Try for searching something else...</h1>
+      </div>
+    );
+  }
   return (
     <Grow in>
       <Grid
