@@ -7,15 +7,23 @@ export default function SearchBar() {
   const classes = useStyles();
   const theme = useTheme();
   const [term, setTerm] = useState("");
-
+  const handleChange = (e) => {
+    setTerm(e.target.value);
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      alert(term.toLowerCase());
+    }
+  };
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>
         <SearchIcon />
       </div>
       <InputBase
-        onChange={(e) => setTerm(e.target.value)}
+        onChange={handleChange}
         value={term}
+        onKeyPress={handleKeyPress}
         placeholder="Search..."
         classes={{
           root: classes.inputRoot,
