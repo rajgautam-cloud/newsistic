@@ -26,6 +26,11 @@ A interesting way to remain updated with the happenings around the world with yo
     - It shows lastest news and a header containing various buttons
     - A sidebar containing different categories.
 
+- **Bookmarks Page**
+
+  - It shows news bookmarked by the user.
+  - User can also delete the articles from bookmarked news.
+
   - **Commands Page**:
 
     - Show all the commands needed to Search news.
@@ -35,6 +40,23 @@ A interesting way to remain updated with the happenings around the world with yo
     - Sign in and Sign up options
     - New user can use Sign up to sign in through Email and Password.
     - Sign in with Google button.
+
+- ### Methods:
+
+  - **Alan Button**
+
+    - Different Alan commands.
+    - New user can read the alan commands from commands page.
+    - Makes the app voice controlled and interesting.
+
+    - **Search Bar**
+    - Option to search the news by typing.
+    - If user wants news about a particular topic he can use it.
+    - It makes the interaction faster.
+
+  - **Side Bar**
+  - Option to click the different categories.
+  - User can get the news only by clicking.
 
 ## **Starting the Dev Server**
 
