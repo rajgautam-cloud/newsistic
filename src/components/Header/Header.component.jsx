@@ -1,37 +1,37 @@
 import React, { useState } from "react";
-import SearchBar from "../Searchbar/Searchbar.component";
+import { Link, useHistory } from "react-router-dom";
 
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import BookmarkIcon from "@material-ui/icons/Bookmark";
-import { Button } from "@material-ui/core";
-import { useTheme } from "@material-ui/core";
+import SearchBar from "../Searchbar/Searchbar.component";
+import { auth } from "../../firebase/firebase.utils";
+
+import { Button, useTheme, ListItem, ListItemIcon } from "@material-ui/core";
 
 import clsx from "clsx";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
+import Drawer from "@material-ui/core/Drawer";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import ListItemText from "@material-ui/core/ListItemText";
+
+import MenuIcon from "@material-ui/icons/Menu";
+import MemoryIcon from "@material-ui/icons/Memory";
+import BusinessIcon from "@material-ui/icons/Business";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import BookmarkIcon from "@material-ui/icons/Bookmark";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import WhatshotIcon from "@material-ui/icons/Whatshot";
-import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
-import MemoryIcon from "@material-ui/icons/Memory";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
-import SportsHandballIcon from "@material-ui/icons/SportsHandball";
-import SettingsVoiceIcon from "@material-ui/icons/SettingsVoice";
-import BusinessIcon from "@material-ui/icons/Business";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { ListItemIcon } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
-import { auth } from "../../firebase/firebase.utils";
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
+import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
+import SettingsVoiceIcon from "@material-ui/icons/SettingsVoice";
+import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
+import SportsHandballIcon from "@material-ui/icons/SportsHandball";
+
 import useStyles from "./Header.styles.js";
 
 export default function Header({ currentUser }) {

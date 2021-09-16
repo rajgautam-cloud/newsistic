@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Grow } from "@material-ui/core";
 
-import useStyles from "./NewsPage.styles.js";
+import useStyles from "./NewsPageSidebar.styles.js";
 
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsPage = ({ location }) => {
