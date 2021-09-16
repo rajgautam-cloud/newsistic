@@ -222,7 +222,15 @@ export default function Header({ currentUser }) {
             <ListItemText primary="Entertainment" />
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem
+            button
+            onClick={() => {
+              history.push({
+                pathname: "/newsearch",
+                state: { value: "coronavirus" },
+              });
+            }}
+          >
             <ListItemIcon>
               <LocalHospitalIcon />
             </ListItemIcon>
