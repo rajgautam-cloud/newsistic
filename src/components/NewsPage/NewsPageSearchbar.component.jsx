@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Grow } from "@material-ui/core";
+import { Grid, Grow, Typography } from "@material-ui/core";
 
 import useStyles from "./NewsPageSearchbar.styles";
 
@@ -29,20 +29,25 @@ const NewsSearch = ({ location }) => {
     );
   }
   return (
-    <Grow in>
-      <Grid
-        className={classes.container}
-        container
-        alignItems="stretch"
-        spacing={3}
-      >
-        {searchBarNews.map((article, i) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
-            <NewsCard article={article} i={i} />
-          </Grid>
-        ))}
-      </Grid>
-    </Grow>
+    <>
+      <Typography variant="h4" className={classes.text}>
+        Here are recent Articles on {location.state.value}
+      </Typography>
+      <Grow in>
+        <Grid
+          className={classes.container}
+          container
+          alignItems="stretch"
+          spacing={3}
+        >
+          {searchBarNews.map((article, i) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
+              <NewsCard article={article} i={i} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grow>
+    </>
   );
 };
 export default NewsSearch;

@@ -20,6 +20,7 @@ export default function SearchBar() {
         pathname: "/newsearch",
         state: { value: term.toLowerCase() },
       });
+      setTerm("");
     }
   };
   return (
