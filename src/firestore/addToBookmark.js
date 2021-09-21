@@ -1,5 +1,4 @@
 import { firestoreDB } from "../firebase/firebase.utils";
-import Alert from "@mui/material/Alert";
 const handleAddToBookmark = async (
   description,
   publishedAt,
@@ -48,5 +47,4 @@ const handleAddToBookmark = async (
     }
   }
 };
-
 export default handleAddToBookmark;
