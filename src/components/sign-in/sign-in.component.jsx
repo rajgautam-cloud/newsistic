@@ -7,7 +7,7 @@ import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
-export default function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
@@ -70,4 +70,5 @@ export default function SignIn() {
       </form>
     </div>
   );
-}
+};
+export default SignIn;
