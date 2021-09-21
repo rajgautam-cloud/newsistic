@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useHistory } from "react-router";
+
 import FormInput from "../form-input/form-input.component";
 import { Button } from "@material-ui/core";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
@@ -11,6 +13,9 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const history = useHistory();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
