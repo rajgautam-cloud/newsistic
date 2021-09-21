@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+
 import SearchIcon from "@material-ui/icons/Search";
-import { useTheme } from "@material-ui/core";
 import { InputBase } from "@material-ui/core";
+
 import useStyles from "./Searchbar.styles";
+
 export default function SearchBar() {
   const classes = useStyles();
-  const theme = useTheme();
   const history = useHistory();
   const [term, setTerm] = useState("");
 
