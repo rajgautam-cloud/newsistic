@@ -85,7 +85,8 @@ const NewsCard = ({
           onClick={() => {
             if (
               window.location.pathname === "/" ||
-              window.location.pathname === "/news"
+              window.location.pathname === "/news" ||
+              window.location.pathname === "/newsearch"
             ) {
               handleAddToBookmark(
                 description,
