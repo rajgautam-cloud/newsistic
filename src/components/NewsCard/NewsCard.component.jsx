@@ -1,4 +1,10 @@
 import React, { useState, useEffect, createRef } from "react";
+
+import firebase from "../../firebase/firebase.utils";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import handleAddToBookmark from "../../firestore/addToBookmark";
+import handleDeleteBookmark from "../../firestore/deleteBookmark";
+
 import {
   Card,
   CardActions,
@@ -8,10 +14,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-import firebase from "../../firebase/firebase.utils";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import handleAddToBookmark from "../../firestore/addToBookmark";
-import handleDeleteBookmark from "../../firestore/deleteBookmark";
+
 import useStyles from "./NewsCard.styles";
 import classNames from "classnames";
 
@@ -24,10 +27,7 @@ const NewsCard = ({
   let uid = null;
   if (auth) {
     uid = auth.uid;
-    console.log(uid);
   }
-  console.log("newscarduid");
-  console.log(uid);
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
@@ -85,7 +85,8 @@ const NewsCard = ({
           onClick={() => {
             if (
               window.location.pathname === "/" ||
-              window.location.pathname === "/news"
+              window.location.pathname === "/news" ||
+              window.location.pathname === "/newsearch"
             ) {
               handleAddToBookmark(
                 description,
@@ -103,10 +104,6 @@ const NewsCard = ({
         >
           <FavoriteIcon />
         </IconButton>
-        {/* <Button size="small" color="primary" href={url} target="_blank">
-          Learn More
-        </Button> */}
-
         <Typography variant="h5" color="textSecondary">
           {i + 1}
         </Typography>
