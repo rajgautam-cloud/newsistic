@@ -20,6 +20,7 @@ const SignUp = () => {
     }
     try {
       const { user } = auth.createUserWithEmailAndPassword(email, password);
+      history.push({ pathname: "/" });
       createUserProfileDocument(user, { displayName });
       setDisplayName("");
       setEmail("");
