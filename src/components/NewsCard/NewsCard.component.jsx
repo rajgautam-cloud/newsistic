@@ -104,10 +104,6 @@ const NewsCard = ({
         >
           <FavoriteIcon />
         </IconButton>
-        {/* <Button size="small" color="primary" href={url} target="_blank">
-          Learn More
-        </Button> */}
-
         <Typography variant="h5" color="textSecondary">
           {i + 1}
         </Typography>
