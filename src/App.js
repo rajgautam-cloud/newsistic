@@ -22,7 +22,6 @@ const App = () => {
           setCurrentUser({ id: snapShot.id, ...snapShot.data() });
         });
       }
-      console.log(userAuth);
       setCurrentUser(userAuth);
     });
     return () => {
