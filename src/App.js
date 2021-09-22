@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Switch, Route } from "react-router-dom";
 
+import Header from "./components/Header/Header.component";
 import HomePage from "./pages/homepage/homepage.component";
 import NewsPage from "./components/NewsPage/NewsPageSidebar.component";
+import NewsSearch from "./components/NewsPage/NewsPageSearchbar.component";
+import CommandCards from "./pages/commands-page/commands-page.component";
 import BookmarksPage from "./pages/bookmarks-page/bookmarks-page.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import Header from "./components/Header/Header.component";
-import CommandCards from "./pages/commands-page/commands-page.component";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import NewsSearch from "./components/NewsPage/NewsPageSearchbar.component";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -22,7 +22,6 @@ const App = () => {
           setCurrentUser({ id: snapShot.id, ...snapShot.data() });
         });
       }
-      console.log(userAuth);
       setCurrentUser(userAuth);
     });
     return () => {

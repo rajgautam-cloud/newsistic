@@ -1,5 +1,4 @@
 import { firestoreDB } from "../firebase/firebase.utils";
-
 const handleAddToBookmark = async (
   description,
   publishedAt,
@@ -9,7 +8,6 @@ const handleAddToBookmark = async (
   urlToImage,
   uid
 ) => {
-  // console.log(uid);
   if (!uid) {
     alert("not logged in");
     return;
@@ -24,7 +22,7 @@ const handleAddToBookmark = async (
           flag = false;
         }
       });
-      if (flag == true) {
+      if (flag === true) {
         bookmarks.push({
           description,
           publishedAt,
@@ -49,5 +47,4 @@ const handleAddToBookmark = async (
     }
   }
 };
-
 export default handleAddToBookmark;

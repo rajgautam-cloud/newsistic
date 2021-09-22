@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useHistory } from "react-router";
+
 import FormInput from "../form-input/form-input.component";
 import { Button } from "@material-ui/core";
 
@@ -10,10 +12,14 @@ import "./sign-in.styles.scss";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const history = useHistory();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
       auth.signInWithEmailAndPassword(email, password);
+      history.push({ pathname: "/" });
       setEmail("");
       setPassword("");
     } catch (error) {
