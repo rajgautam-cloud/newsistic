@@ -22,7 +22,7 @@ const handleAddToBookmark = async (
           flag = false;
         }
       });
-      if (flag == true) {
+      if (flag === true) {
         bookmarks.push({
           description,
           publishedAt,
