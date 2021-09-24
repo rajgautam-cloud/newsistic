@@ -9,14 +9,14 @@ const NewsCards = ({ articles, activeArticle }) => {
   const [LatestNews, setLatestNews] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const response = await fetch(
         `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
       );
       const data = await response.json();
       const item = data.articles;
       setLatestNews(item);
-    }
+    };
     fetchData();
   }, []);
   if (!articles.length) {
