@@ -12,12 +12,12 @@ const NewsSearch = ({ location }) => {
   useEffect(() => {
     const url = `https://newsapi.org/v2/everything?q=${location.state.value}&apiKey=${API_KEY}`;
 
-    async function fetchData() {
+    const fetchData = async () => {
       const response = await fetch(url);
       const data = await response.json();
       const item = data.articles;
       setSearchBarNews(item);
-    }
+    };
     fetchData();
   }, [location]);
 
