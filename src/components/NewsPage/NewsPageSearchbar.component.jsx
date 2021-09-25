@@ -24,7 +24,7 @@ const NewsSearch = ({ location }) => {
   if (!searchBarNews.length) {
     return (
       <div className={classes.container}>
-        <h1>Try for searching something else...</h1>
+        <h1>Loading....</h1>
       </div>
     );
   }
