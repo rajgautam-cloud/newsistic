@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
 import { useHistory } from "react-router";
 
 import FormInput from "../form-input/form-input.component";
+
 import { Button } from "@material-ui/core";
 
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";

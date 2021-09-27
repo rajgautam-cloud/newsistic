@@ -10,15 +10,12 @@ const NewsPage = ({ location }) => {
   const classes = useStyles();
   useEffect(() => {
     const news_api = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=us&category=${location.state.value}`;
-    function fetchData() {
-      fetch(news_api)
-        .then((data) => data.json())
-        .then((res) => {
-          const item = res.articles;
-          setSideBarNews(item);
-        })
-        .catch((err) => console.log(err));
-    }
+    const fetchData = async () => {
+      const response = await fetch(news_api);
+      const data = await response.json();
+      const item = data.articles;
+      setSideBarNews(item);
+    };
     fetchData();
   }, [location]);
 

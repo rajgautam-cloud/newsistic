@@ -38,7 +38,6 @@ const NewsCard = ({
         .map((_, j) => refs[j] || createRef())
     );
   }, []);
-
   useEffect(() => {
     if (i === activeArticle && elRefs[activeArticle]) {
       scrollToRef(elRefs[activeArticle]);
