@@ -3,11 +3,6 @@ intent(
   "What can I do here?",
   reply("This is a news project.")
 );
-intent("Who is your boss. ?", reply("I work for master Raj."));
-intent(
-  "Who created this masterpiece. ?",
-  reply("Master Raj build and work on this app.")
-);
 
 const API_KEY = "";
 let savedArticles = [];
