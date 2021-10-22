@@ -5,7 +5,7 @@ A interesting way to remain updated with the happenings around the world with yo
 
 ### **Click on link below to view its amazing features .**
 
-Newsapi.org does not provide articles on its developer plan(cors is available only for localhost) so this website does not show articles when hosted.
+Newsapi.org does not provide articles on its developer plan(i.e. cors is available only for localhost) so this website does not show articles when hosted.
 Watch this demo to view this website
 
 # [Full Project Demo](https://www.linkedin.com/posts/raj-gautam-024369201_webdeveloper-newsalert-reactdeveloper-activity-6841978327721369600-eLkH/)
