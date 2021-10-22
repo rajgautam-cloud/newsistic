@@ -10,14 +10,12 @@ const NewsSearch = ({ location }) => {
 
   const classes = useStyles();
   useEffect(() => {
-    const url = `http://api.mediastack.com/v1/news?access_key=4f5d111d9fa4579660122b0712d928d5&keywords=${location.state.value}`;
-    console.log(
-      `http://api.mediastack.com/v1/news?access_key=4f5d111d9fa4579660122b0712d928d5&keywords=${location.state.value}`
-    );
+    const url = `https://newsapi.org/v2/everything?q=${location.state.value}&apiKey=${API_KEY}`;
+
     const fetchData = async () => {
       const response = await fetch(url);
       const data = await response.json();
-      const item = data.data;
+      const item = data.articles;
       setSearchBarNews(item);
     };
     fetchData();
