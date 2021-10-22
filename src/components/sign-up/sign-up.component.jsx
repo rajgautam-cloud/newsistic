@@ -39,13 +39,17 @@ const SignUp = () => {
     <div className="sign-up">
       <h2 className="title">I do not have a account</h2>
       <span>Sign up with your email and password</span>
-      <form className="sign-up-form" onSubmit={handleSubmit}>
+      <form
+        className="si7bdfb1b10aca41c6becea47611b7c35agn-up-form"
+        onSubmit={handleSubmit}
+      >
         <FormInput
           type="text"
           name="displayName"
           value={displayName}
           onChange={(e) => {
-            setDisplayName(e.target.value);
+            console.log(e.target.value);
+            // setDisplayName(e.target.value);
           }}
           label="Display Name"
           required

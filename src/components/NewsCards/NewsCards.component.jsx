@@ -11,10 +11,10 @@ const NewsCards = ({ articles, activeArticle }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+        `http://api.mediastack.com/v1/news?access_key=4f5d111d9fa4579660122b0712d928d5&countries=us,in`
       );
       const data = await response.json();
-      const item = data.articles;
+      const item = data.data;
       setLatestNews(item);
     };
     fetchData();
