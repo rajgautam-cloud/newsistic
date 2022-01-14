@@ -9,7 +9,8 @@ const NewsPage = ({ location }) => {
   const API_KEY = process.env.REACT_APP_NEWSAPI;
   const classes = useStyles();
   useEffect(() => {
-    const news_api = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=us&category=${location.state.value}`;
+    const news_api = `https://saurav.tech/NewsAPI/top-headlines/category/${location.state.value}/us.json`;
+    console.log(news_api);
     const fetchData = async () => {
       const response = await fetch(news_api);
       const data = await response.json();
