@@ -11,7 +11,7 @@ const NewsCards = ({ articles, activeArticle }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+        `https://saurav.tech/NewsAPI/top-headlines/category/general/us.json`
       );
       const data = await response.json();
       const item = data.articles;
