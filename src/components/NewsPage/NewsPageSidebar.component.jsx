@@ -6,7 +6,6 @@ import useStyles from "./NewsPageSidebar.styles.js";
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsPage = ({ location }) => {
   const [SideBarNews, setSideBarNews] = useState([]);
-  const API_KEY = process.env.REACT_APP_NEWSAPI;
   const classes = useStyles();
   useEffect(() => {
     const news_api = `https://saurav.tech/NewsAPI/top-headlines/category/${location.state.value}/us.json`;

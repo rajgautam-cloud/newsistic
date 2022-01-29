@@ -47,7 +47,7 @@ const Directory = () => {
         },
       });
     }
-  }, [alanBtnInstance]);
+  });
   return (
     <div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
