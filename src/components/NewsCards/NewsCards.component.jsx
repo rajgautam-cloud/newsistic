@@ -5,9 +5,7 @@ import useStyles from "./NewsCards.styles";
 import NewsCard from "../NewsCard/NewsCard.component";
 const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
-  const API_KEY = process.env.REACT_APP_NEWSAPI;
   const [LatestNews, setLatestNews] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
